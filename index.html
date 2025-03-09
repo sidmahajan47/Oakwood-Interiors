@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakwood Interiors - Premium Interior Design</title>
+    <!-- Emergency fix for blank screen -->
+    <script>
+        // Make sure the site content is visible regardless of CSS errors
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.visibility = 'visible';
+            document.body.style.opacity = '1';
+            
+            // Force all AOS elements to be visible if needed
+            setTimeout(function() {
+                document.querySelectorAll('[data-aos]').forEach(function(el) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                    el.style.visibility = 'visible';
+                });
+            }, 500);
+        });
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper JS for carousels -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styling.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        /* Critical styles to ensure the site is visible */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Enhanced Header Styling */
+        .main-header {
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .main-header.scrolled {
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        /* Enhanced logo styling */
+        .main-header .logo span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #d4af37 0%, #a17c27 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 2px 3px rgba(0,0,0,0.1);
+            margin-right: 15px;
+            position: relative;
+            padding-bottom: 2px;
+        }
+        
+        /* Enhanced Navigation */
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .main-nav li {
+            list-style: none;
+        }
+        
+        .main-nav a:not(.btn) {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .main-nav a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #d4af37, transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:not(.btn):hover {
+            color: #d4af37;
+        }
+        
+        .main-nav a:not(.btn):hover::after {
+            width: 100%;
+        }
+        
+        /* Enhanced Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d4af37 0%, #a17c27 100%);
+            z-index: -1;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+        
+        .btn:hover::before {
+            opacity: 0.9;
+            background: linear-gradient(135deg, #a17c27 0%, #d4af37 100%);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-primary {
+            color: white;
+            border: none;
+        }
+
+        /* Hero Section Enhancements */
+        .hero {
+            padding-top: 120px;  /* Adjusted for fixed header */
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(249,247,243,0.95) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/images/pattern-bg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #666;
+            max-width: 90%;
+        }
+        
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(161, 124, 39, 0.1) 100%);
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .badge span:first-child {
+            font-weight: 700;
+            font-size: 14px;
+            color: #d4af37;
+            margin-right: 8px;
+        }
+        
+        .badge span:last-child {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Enhanced Gallery Item Styling */
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Section Enhancement */
+        .contact {
+            position: relative;
+            background: linear-gradient(135deg, #f9f7f3 0%, #ffffff 100%);
+            padding: 80px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/images/pattern-bg.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        .contact-grid {
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background-color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .contact-form button {
+            background: linear-gradient(135deg, #d4af37 0%, #a17c27 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Slider components */
+        .img-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .before-img, .after-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .after-img {
+            z-index: 1;
+        }
+        
+        .before-after-slider input[type="range"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            background: transparent;
+            z-index: 3;
+            margin: 0;
+            cursor: ew-resize;
+        }
+        
+        .before-after-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 1px;
+            height: 100%;
+            background: transparent;
+            cursor: ew-resize;
+        }
+        
+        .slider-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 2;
+            pointer-events: none;
+            transform: translateX(-50%);
+        }
+        
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #d4af37;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            pointer-events: none;
+            z-index: 3;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .slider-button i {
+            font-size: 14px;
+            color: #fff;
+        }
+        
+        /* Add active state styling for better interaction */
+        .before-after-slider.active .slider-line {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .before-after-slider.active .slider-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            border-color: white;
+        }
+
+        /* Add responsive height adjustments */
+        @media (max-width: 768px) {
+            .img-container {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .img-container {
+                height: 250px;
+            }
+            .slider-button {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        /* Enhanced Footer */
+        .main-footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links li a:hover {
+            color: #d4af37;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        /* Chatbot Styles */
+        #simple-chatbot {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999999;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        #chat-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4af37 0%, #a17c27 100%);
+            box-shadow: 0 5px 15px rgba(161, 124, 39, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #chat-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(161, 124, 39, 0.4);
+        }
+        
+        #chat-button i {
+            color: white;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        #chat-button:hover i {
+            transform: scale(1.1);
+        }
+        
+        #chat-window {
+            display: none;
+            position: absolute;
+            bottom: 85px;
+            right: 0;
+            width: 350px;
+            max-width: calc(100vw - 40px);
+            background: linear-gradient(to bottom, #ffffff, #f9f7f2);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.05);
+            overflow: hidden;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        #chat-window.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .chat-header {
+            padding: 18px 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #a17c27 100%);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+        
+        .chat-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .chat-header h3 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        #close-chat {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 5;
+        }
+        
+        #close-chat:hover {
+            transform: rotate(90deg);
+        }
+        
+        .chat-messages {
+            padding: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            background-color: transparent;
+            background-image: 
+                radial-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(to right, rgba(212, 175, 55, 0.01), transparent 10px, transparent 90%, rgba(212, 175, 55, 0.01));
+            background-size: 20px 20px, 100% 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            scroll-behavior: smooth;
+        }
+        
+        .message {
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 85%;
+            line-height: 1.5;
+            position: relative;
+            word-wrap: break-word;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .message p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        
+        .message.bot {
+            background-color: #f9f7f3;
+            border-left: 3px solid #d4af37;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            border-top-left-radius: 5px;
+            align-self: flex-start;
+            margin-right: auto;
+        }
+        
+        .message.user {
+            background: linear-gradient(135deg, #d4af37 0%, #e5c760 100%);
+            color: #ffffff;
+            border-top-right-radius: 5px;
+            align-self: flex-end;
+            margin-left: auto;
+            border-bottom-left-radius: 18px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 15px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            background: #ffffff;
+            position: relative;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 30px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: #fcfaf5;
+        }
+        
+        .chat-input input:focus {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.1);
+        }
+        
+        .chat-input button {
+            width: 42px;
+            height: 42px;
+            margin-left: 10px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #d4af37 0%, #a17c27 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chat-input button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .chat-footer {
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #a17c27;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            background-color: #f9f7f3;
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+        
+        .notification-badge.hidden {
+            opacity: 0;
+            transform: scale(0);
+        }
+        
+        /* Container and core layout fixes */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 25px;
+            box-sizing: border-box;
+        }
+        
+        /* Add smooth scroll behavior to html */
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        /* Improve section transitions */
+        section {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        
+        /* Enhanced button hover states */
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+        }
+        
+        /* Subtle background gradient for sections */
+        section:nth-child(odd) {
+            background: linear-gradient(135deg, rgba(255,255,255,0.97) 0%, rgba(249,247,243,0.97) 100%);
+        }
+        
+        /* Enhanced form inputs */
+        input:focus, textarea:focus {
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        /* Logo animation */
+        .logo span {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .logo span::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .logo:hover span::after {
+            transform: translateX(100%);
+        }
+        
+        /* Add subtle shadows to cards */
+        .project-card, .testimonial-card {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .project-card:hover, .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Scroll reveal animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Enhanced hero section */
+        .hero h1 {
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Parallax effect for background elements */
+        .parallax {
+            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+            will-change: transform;
+        }
+        
+        /* Improved navigation highlighting */
+        .main-nav a:not(.btn)::after {
+            height: 3px;
+            background: linear-gradient(90deg, #d4af37, rgba(212, 175, 55, 0.3));
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Remove scroll progress bar -->
+    <!-- <div class="scroll-progress"></div> -->
+    
+    <header class="main-header" data-aos="fade-down" data-aos-duration="600">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <!-- <img src="assets/logo.png" alt="Oakwood Logo" class="logo-img"> -->
+                <span>Oakwood</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li data-aos="fade-down" data-aos-delay="100"><a href="#featured-projects">Projects</a></li>
+                    <li data-aos="fade-down" data-aos-delay="200"><a href="#testimonials">Reviews</a></li>
+                    <li data-aos="fade-down" data-aos-delay="300"><a href="#contact">Contact</a></li>
+                    <li data-aos="fade-down" data-aos-delay="300"><a href="https://www.instagram.com/everscale_666/">EverScale</a></li>
+                    <li data-aos="fade-down" data-aos-delay="400"><a href="#contact" class="btn btn-primary">Free Quote</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="badge scroll-reveal" data-aos="zoom-in" data-aos-delay="300">
+                        <span>#1</span>
+                        <span>INTERIOR DESIGN SERVICE</span>
+                    </div>
+                    <h1 class="scroll-reveal" data-aos="fade-up" data-aos-delay="100">Stunning interior design services, now within reach.</h1>
+                    <p class="scroll-reveal" data-aos="fade-up" data-aos-delay="200">Transform your space into a personalized haven with our expert design team</p>
+                    <button class="btn btn-primary btn-large scroll-reveal" data-aos="fade-up" data-aos-delay="400">FIND YOUR STYLE</button>
+                </div>
+                <div class="hero-gallery" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="gallery-item parallax" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/images/img1.jpg" alt="Modern living room">
+                        <span class="caption">Designed for Rahul</span>
+                    </div>
+                    <div class="gallery-item parallax" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/images/img5.jpg" alt="Contemporary bedroom">
+                        <span class="caption">Designed for Laukik</span>
+                    </div>
+                    <div class="gallery-item parallax" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/images/img6.jpg" alt="Contemporary bedroom">
+                        <span class="caption">Designed for Shivshree</span>
+                    </div>
+                    <div class="gallery-item parallax" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="assets/images/img7.jpg" alt="Contemporary bedroom">
+                        <span class="caption">Designed for Sid</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison">
+            <div class="container">
+                <div class="section-header scroll-reveal" data-aos="fade-up">
+                    <h2>See the Transformation</h2>
+                    <p>Drag the slider to reveal the before and after</p>
+                </div>
+                
+                <!-- Simplified slider that works without complex CSS -->
+                <div class="before-after-slider" data-aos="fade-up" data-aos-delay="200" style="position: relative; max-width: 100%; margin: 30px auto; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <div style="position: relative; padding-top: 66.67%;">
+                        <!-- After image (base layer) -->
+                        <img src="assets/images/before1.jpg" alt="After transformation" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                        
+                        <!-- Before image container -->
+                        <div id="before-image-container" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-right: 3px solid white; z-index: 2;">
+                            <img src="assets/images/after1.jpg" alt="Before transformation" style="position: absolute; top: 0; left: 0; width: 200%; height: 100%; object-fit: cover;">
+                            </div>
+                        
+                        <!-- Slider handle -->
+                        <div id="slider-handle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: #d4af37; border: 2px solid white; display: flex; align-items: center; justify-content: center; z-index: 3; box-shadow: 0 0 10px rgba(0,0,0,0.2); cursor: move;">
+                            <i class="fas fa-arrows-left-right" style="color: white;"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    // Simple slider implementation
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const slider = document.querySelector('.before-after-slider');
+                        const beforeContainer = document.getElementById('before-image-container');
+                        const sliderHandle = document.getElementById('slider-handle');
+                        
+                        if (!slider || !beforeContainer || !sliderHandle) return;
+                        
+                        function updateSlider(percent) {
+                            beforeContainer.style.width = percent + '%';
+                            sliderHandle.style.left = percent + '%';
+                        }
+                        
+                        // Handle mouse events
+                        let isDragging = false;
+                        
+                        slider.addEventListener('mousedown', function(e) {
+                            isDragging = true;
+                            slider.style.cursor = 'grabbing';
+                            updateFromClientX(e.clientX);
+                        });
+                        
+                        document.addEventListener('mousemove', function(e) {
+                            if (!isDragging) return;
+                            updateFromClientX(e.clientX);
+                        });
+                        
+                        document.addEventListener('mouseup', function() {
+                            isDragging = false;
+                            slider.style.cursor = 'grab';
+                        });
+                        
+                        // Handle touch events
+                        slider.addEventListener('touchstart', function(e) {
+                            isDragging = true;
+                            updateFromClientX(e.touches[0].clientX);
+                        });
+                        
+                        document.addEventListener('touchmove', function(e) {
+                            if (!isDragging) return;
+                            updateFromClientX(e.touches[0].clientX);
+                        });
+                        
+                        document.addEventListener('touchend', function() {
+                            isDragging = false;
+                        });
+                        
+                        function updateFromClientX(clientX) {
+                            const rect = slider.getBoundingClientRect();
+                            let percent = ((clientX - rect.left) / rect.width) * 100;
+                            // Clamp value between 0 and 100
+                            percent = Math.min(100, Math.max(0, percent));
+                            updateSlider(percent);
+                        }
+                        
+                        // Initialize slider
+                        updateSlider(50);
+                    });
+                </script>
+            </div>
+        </section>
+
+        <section class="featured-projects" id="featured-projects">
+            <div class="container">
+                <div class="section-header scroll-reveal" data-aos="fade-up">
+                    <h2>Featured Projects</h2>
+                    <p>Explore our latest transformations</p>
+                </div>
+                <div class="project-grid">
+                    <div class="project-card scroll-reveal" data-aos="fade-up" data-aos-delay="100">
+                        <img src="assets/images/img4.jpg" alt="Modern Living Room">
+                        <div class="project-info">
+                            <h3>Modern Living Room</h3>
+                            <p>Contemporary design with comfort</p>
+                        </div>
+                    </div>
+                    <div class="project-card scroll-reveal" data-aos="fade-up" data-aos-delay="200">
+                        <img src="assets/images/img5.jpg" alt="Modern Living Room">
+                        <div class="project-info">
+                            <h3>Modern Bedroom</h3>
+                            <p>Contemporary design with comfort</p>
+                        </div>
+                    </div>
+                    <div class="project-card scroll-reveal" data-aos="fade-up" data-aos-delay="300">
+                        <img src="assets/images/hero-background.jpg" alt="Modern Living Room">
+                        <div class="project-info">
+                            <h3>Modern Living Room</h3>
+                            <p>Contemporary design with comfort</p>
+                        </div>
+                    </div>
+                    <!-- Add more project cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-header scroll-reveal" data-aos="fade-up">
+                    <h2>Client Stories</h2>
+                    <p>What our clients say about their experience</p>
+                </div>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card scroll-reveal" data-aos="fade-up" data-aos-delay="100">
+                        <div class="quote">"</div>
+                        <p>Oakwood Interiors transformed my living space into something beyond my imagination!</p>
+                        <div class="client-info">
+                            <img src="assets/images/client1.jpg" alt="Client">
+                            <div>
+                                <h4>Rahul Agrahari</h4>
+                                <p>Living Room Transformation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card scroll-reveal" data-aos="fade-up" data-aos-delay="200">
+                        <div class="quote">"</div>
+                        <p>The before-and-after makeover is unbelievable! Oakwood Interiors exceeded our expectations.</p>
+                        <div class="client-info">
+                            <img src="assets/images/client2.jpg" alt="Client">
+                            <div>
+                                <h4>Laukik Pagar</h4>
+                                <p>Bedroom Transformation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card scroll-reveal" data-aos="fade-up" data-aos-delay="300">
+                        <div class="quote">"</div>
+                        <p>Elegant, timeless, and sophisticated designs. Truly the best interior designers!</p>
+                        <div class="client-info">
+                            <img src="assets/images/client3.jpg" alt="Client">
+                            <div>
+                                <h4>Sid Mahajan</h4>
+                                <p>Gaming Room</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card scroll-reveal" data-aos="fade-up" data-aos-delay="400">
+                        <div class="quote">"</div>
+                        <p>Oakwood Interiors transformed my living space into something beyond my imagination!</p>
+                        <div class="client-info">
+                            <img src="assets/images/client4.jpg" alt="Client">
+                            <div>
+                                <h4>Shivshree Pawar</h4>
+                                <p>Kitchen</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info scroll-reveal" data-aos="fade-right" data-aos-duration="800">
+                        <h2>Let's Create Your Dream Space</h2>
+                        <p>Schedule a consultation with our design experts</p>
+                        <div class="contact-methods">
+                            <a href="72620860302" class="contact-button" data-aos="zoom-in" data-aos-delay="100">
+                                <i class="fas fa-phone"></i>
+                                Call Us
+                            </a>
+                            <a href="mailto:sidmahajan47@gmail.com" class="contact-button" data-aos="zoom-in" data-aos-delay="200">
+                                <i class="fas fa-envelope"></i>
+                                Email Us
+                            </a>
+                        </div>
+                    </div>
+                    <form id="contact-form" class="contact-form" data-aos="fade-left" data-aos-duration="800">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 or start with your area code" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <p class="form-notice" style="font-size: 12px; color: #777; margin-top: 10px; font-style: italic;">By submitting this form, you'll receive a confirmation SMS at the phone number provided.</p>
+                        <button type="submit" data-aos="fade-up" data-aos-delay="200">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer" data-aos="fade-up" data-aos-offset="0">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand" data-aos="fade-right" data-aos-delay="100">
+                    <img src="assets/images/logo.png" alt="Oakwood Interiors">
+                    <p>Creating beautiful spaces that inspire</p>
+                </div>
+                <!-- Add footer navigation and social links -->
+            </div>
+            <div class="footer-bottom">
+                <ul class="footer-links">
+                    <li data-aos="fade-up" data-aos-delay="100"><a href="#">Privacy Policy</a></li>
+                    <li data-aos="fade-up" data-aos-delay="150"><a href="#">Terms of Service</a></li>
+                    <li data-aos="fade-up" data-aos-delay="200"><a href="#">Contact Us</a></li>
+                </ul>
+                <p data-aos="fade-up" data-aos-delay="250">&copy; 2025 EVERSCALE DEMO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/slider.js"></script>
+    
+    <!-- AOS initialization -->
+    <script>
+      // Initialize AOS with fallback to ensure visibility
+        document.addEventListener('DOMContentLoaded', function() {
+        // First make sure content is visible regardless of animation
+        document.body.style.visibility = 'visible';
+        document.body.style.opacity = '1';
+        
+        // Then initialize AOS with enhanced settings
+        if (typeof AOS !== 'undefined') {
+          AOS.init({
+            duration: 800,
+            easing: 'cubic-bezier(0.25, 0.1, 0.25, 1.0)', // Improved easing for smoother animations
+            once: false, // Allow animations to occur each time element scrolls into view
+            mirror: true, // Whether elements should animate out while scrolling past them
+            disable: window.innerWidth < 768, // Disable on mobile for better performance
+            anchorPlacement: 'top-bottom', // Defines which position of the element regarding to window should trigger the animation
+            offset: 120, // Offset (in px) from the original trigger point
+          });
+          
+          // Force refresh animations
+          setTimeout(function() {
+            AOS.refresh();
+          }, 100);
+                } else {
+          // If AOS fails to load, make all elements visible
+          const aosElements = document.querySelectorAll('[data-aos]');
+          aosElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+        }
+        
+        // Add scroll-triggered reveal classes for enhanced animations
+        const addScrollClass = function() {
+            const scrollElements = document.querySelectorAll('.scroll-reveal');
+            
+            scrollElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+        
+        // Add scroll listener for custom reveal animations
+        window.addEventListener('scroll', addScrollClass);
+        
+        // Check for elements in view on initial load
+        addScrollClass();
+        });
+    </script>
+
+    <!-- Chatbot Implementation -->
+    <div id="simple-chatbot">
+        <div id="chat-button">
+            <i class="fas fa-comments"></i>
+            <span class="notification-badge hidden">1</span>
+        </div>
+        <div id="chat-window">
+            <div class="chat-header">
+                <h3>Oakwood Assistant</h3>
+                <button id="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages">
+                <!-- Messages will be added here dynamically -->
+                <div class="message bot">
+                    <p>👋 Hi there! I'm your Oakwood design assistant. How can I help with your interior design project today?</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message..." id="chat-input-field">
+                <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="chat-footer">
+                Powered by EVERSCALE
+            </div>
+        </div>
+    </div>
+
+    <!-- Load chatbot script -->
+    <script src="js/chatbot.js"></script>
+    
+    <!-- Fallback chatbot functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chatbot configuration
+            const chatbotConfig = {
+                apiEndpoint: "https://api.oakwoodinteriors.com/chat", // Simulated API endpoint
+                initialDelay: 300,
+                typingDelay: 1000,
+                responseDelay: 1500,
+                suggestedResponses: [
+                    "Tell me about your interior design services",
+                    "What is your pricing structure?",
+                    "Do you offer free consultations?",
+                    "How long does a typical project take?"
+                ]
+            };
+            
+            // Chatbot elements
+            const chatButton = document.getElementById('chat-button');
+            const chatWindow = document.getElementById('chat-window');
+            const closeButton = document.getElementById('close-chat');
+            const sendButton = document.getElementById('send-message');
+            const chatInput = document.getElementById('chat-input-field');
+            const messagesContainer = document.querySelector('.chat-messages');
+            const notification = document.querySelector('.notification-badge');
+            
+            // Chatbot state
+            let chatHistory = [];
+            let isTyping = false;
+            let sessionId = generateSessionId();
+            let userProfile = {
+                name: null,
+                email: null,
+                phone: null,
+                projectType: null,
+                budget: null,
+                timeline: null,
+                collectionStage: null
+            };
+            
+            // Keywords for intelligent responses
+            const keywords = {
+                'pricing': "Our design packages start at $500 for a consultation, with full room designs ranging from $2,000-$5,000 depending on scope. Would you like us to email you our detailed pricing guide?",
+                'quote': "I'd be happy to provide a quote for your project! Could you tell me more about what space you're looking to redesign and your approximate budget?",
+                'consultation': "We offer free 30-minute virtual consultations and paid in-home consultations starting at $250. Would you like to schedule one?",
+                'service': "Our services include: 1) Full room design, 2) Renovation planning, 3) Color consultation, 4) Furniture selection, and 5) Project management. Which of these interests you most?",
+                'portfolio': "You can view our portfolio by clicking on the 'Projects' section in the menu. Is there a specific style or room type you're interested in seeing?",
+                'time': "Most of our projects take between 6-12 weeks from initial consultation to completion, depending on the scope and product availability. Do you have a specific timeline in mind?",
+                'contact': "You can reach our design team directly at designs@oakwoodinteriors.com or call us at (555) 123-4567. Would you prefer that someone call you?",
+                'style': "We specialize in contemporary, mid-century modern, transitional, and minimalist designs. Which style appeals to you most?",
+                'hello': "Hello! 👋 Thanks for reaching out to Oakwood Interiors. How can I assist with your design needs today?",
+                'bye': "Thank you for chatting with Oakwood Interiors today! It was a pleasure to help you. Have a wonderful day, and we look forward to transforming your space soon! Feel free to reach out anytime you have questions. 👋",
+                'goodbye': "Thank you for chatting with Oakwood Interiors today! It was a pleasure to help you. Have a wonderful day, and we look forward to transforming your space soon! Feel free to reach out anytime you have questions. 👋",
+                'thanks': "You're welcome! It's been my pleasure to assist you today. If you have any more questions in the future, don't hesitate to reach out. Have a wonderful day! 👋",
+                'thank you': "You're welcome! It's been my pleasure to assist you today. If you have any more questions in the future, don't hesitate to reach out. Have a wonderful day! 👋"
+            };
+            
+            // Initialize chatbot
+            function initChatbot() {
+                console.log("Initializing chatbot...");
+                
+                // Clear existing welcome message
+                while (messagesContainer.firstChild) {
+                    messagesContainer.removeChild(messagesContainer.firstChild);
+                }
+                
+                // Add personalized welcome message with user details collection
+                addMessage("👋 Hi there! I'm your Oakwood design assistant. To help you better, could you tell me your name?", "bot");
+                userProfile.collectionStage = "name";
+                
+                // Direct chat button click - ensure this works first
+                if (chatButton) {
+                    chatButton.onclick = function() {
+                        console.log("Chat button clicked");
+                        if (chatWindow) {
+                            if (chatWindow.classList.contains('active')) {
+                                chatWindow.classList.remove('active');
+                                console.log("Chat window hidden");
+                            } else {
+                                chatWindow.classList.add('active');
+                                console.log("Chat window shown");
+                                if (notification) {
+                                    notification.classList.add('hidden');
+                                }
+                                if (chatInput) {
+                                    setTimeout(function() {
+                                        chatInput.focus();
+                                    }, chatbotConfig.initialDelay);
+                                }
+                            }
+                        } else {
+                            console.error("Chat window element not found");
+                        }
+                    };
+                } else {
+                    console.error("Chat button element not found");
+                }
+                
+                // Close button - fixed function name conflict
+                if (closeButton) {
+                    closeButton.onclick = function() {
+                        console.log("Close button clicked");
+                        if (chatWindow) {
+                            chatWindow.classList.remove('active');
+                        }
+                    };
+                }
+                
+                // Send message handlers
+                if (sendButton && chatInput) {
+                    sendButton.onclick = function() {
+                        handleSendMessage();
+                    };
+                    
+                    chatInput.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter') {
+                            handleSendMessage();
+                        }
+                    });
+                }
+                
+                // No need for suggested responses initially, as we're collecting user information
+                
+                // Show notification after delay if chat not opened
+                setTimeout(function() {
+                    if (notification && !chatWindow.classList.contains('active')) {
+                        notification.classList.remove('hidden');
+                    }
+                }, 8000);
+            }
+            
+            // Handle sending a message
+            function handleSendMessage() {
+                const message = chatInput.value.trim();
+                if (message !== '' && !isTyping) {
+                    // Add user message
+                    addMessage(message, 'user');
+                    chatHistory.push({ role: 'user', content: message });
+                    
+                    // Clear input
+                    chatInput.value = '';
+                    
+                    // Check if we're in user detail collection mode
+                    if (userProfile.collectionStage) {
+                        collectUserDetail(message);
+                    } else {
+                        // Process the message and respond
+                        processMessage(message);
+                    }
+                }
+            }
+            
+            // Collect user details sequentially
+            function collectUserDetail(message) {
+                showTypingIndicator();
+                
+                setTimeout(function() {
+                    switch(userProfile.collectionStage) {
+                        case "name":
+                            userProfile.name = message;
+                            hideTypingIndicator();
+                            setTimeout(function() {
+                                addMessage(`Nice to meet you, ${userProfile.name}! To better assist you, could you please share your email address? This will help us send you design ideas and follow up on our conversation.`, "bot");
+                                userProfile.collectionStage = "email";
+                            }, chatbotConfig.responseDelay);
+                            break;
+                            
+                        case "email":
+                            // Simple email validation
+                            if (message.includes('@') && message.includes('.')) {
+                                userProfile.email = message;
+                                hideTypingIndicator();
+                                setTimeout(function() {
+                                    addMessage(`Thanks for your email! What type of space are you looking to redesign? (e.g., living room, bedroom, kitchen, etc.)`, "bot");
+                                    userProfile.collectionStage = "projectType";
+                                }, chatbotConfig.responseDelay);
+                            } else {
+                                hideTypingIndicator();
+                                setTimeout(function() {
+                                    addMessage(`That doesn't look like a valid email address. Please provide a valid email so we can send you design materials.`, "bot");
+                                }, chatbotConfig.responseDelay);
+                            }
+                            break;
+                            
+                        case "projectType":
+                            userProfile.projectType = message;
+                            hideTypingIndicator();
+                            setTimeout(function() {
+                                addMessage(`A ${userProfile.projectType} redesign sounds exciting! Do you have a budget range in mind for this project?`, "bot");
+                                userProfile.collectionStage = "budget";
+                            }, chatbotConfig.responseDelay);
+                            break;
+                            
+                        case "budget":
+                            userProfile.budget = message;
+                            hideTypingIndicator();
+                            setTimeout(function() {
+                                addMessage(`Great! And what's your timeline for completing this project?`, "bot");
+                                userProfile.collectionStage = "timeline";
+                            }, chatbotConfig.responseDelay);
+                            break;
+                            
+                        case "timeline":
+                            userProfile.timeline = message;
+                            hideTypingIndicator();
+                            setTimeout(function() {
+                                // Completion of user data collection
+                                const summaryMessage = `Thank you for providing these details, ${userProfile.name}! Based on what you've shared:
+
+• Project: ${userProfile.projectType} redesign
+• Budget: ${userProfile.budget}
+• Timeline: ${userProfile.timeline}
+
+I can help you with specific design recommendations or connect you with one of our specialists. What would you like to know about next?`;
+                                
+                                addMessage(summaryMessage, "bot");
+                                userProfile.collectionStage = null; // Exit collection mode
+                                
+                                // Now show suggested responses
+                                setTimeout(showSuggestedResponses, 1000);
+                            }, chatbotConfig.responseDelay);
+                            break;
+                    }
+                }, chatbotConfig.typingDelay);
+            }
+            
+            // Process the user's message and determine response
+            function processMessage(message) {
+                // Show typing indicator
+                showTypingIndicator();
+                
+                // Simulate API request
+                setTimeout(function() {
+                    // Check for keyword matches first
+                    const lowerMessage = message.toLowerCase();
+                    let response = null;
+                    
+                    // Look for keyword matches
+                    for (const [key, value] of Object.entries(keywords)) {
+                        if (lowerMessage.includes(key)) {
+                            response = value;
+                            break;
+                        }
+                    }
+                    
+                    // Check for conversation ending phrases
+                    if (!response) {
+                        const closingPhrases = ['bye', 'goodbye', 'see you', 'talk later', 'end', 'finish', 'done', 'exit', 'close'];
+                        
+                        // Check if message contains any closing phrases
+                        const isClosingMessage = closingPhrases.some(phrase => lowerMessage.includes(phrase));
+                        
+                        if (isClosingMessage) {
+                            response = keywords.goodbye;
+                        }
+                    }
+                    
+                    // If no specific match, provide a contextual response
+                    if (!response) {
+                        if (lowerMessage.includes('cost') || lowerMessage.includes('price') || lowerMessage.includes('expensive')) {
+                            response = keywords.pricing;
+                        } else if (lowerMessage.includes('help') || lowerMessage.includes('design') || lowerMessage.includes('need')) {
+                            response = `I'd be happy to help with your design needs, ${userProfile.name || ''}! Could you tell me more about your ${userProfile.projectType || 'space'} and what you're looking to achieve?`;
+                        } else if (lowerMessage.includes('thanks') || lowerMessage.includes('thank you')) {
+                            response = `You're welcome, ${userProfile.name || ''}! Is there anything else I can help you with today?`;
+                        } else if (lowerMessage.includes('phone') || lowerMessage.includes('call')) {
+                            response = "Would you like our design team to call you? If so, please provide your phone number, and we'll have someone reach out within 24 hours.";
+                            userProfile.collectionStage = "phone";
+                        } else if (lowerMessage.length < 15) {
+                            response = `I'd love to help you with your ${userProfile.projectType || 'interior design project'}, ${userProfile.name || ''}. Could you please provide more details about what you're looking for?`;
+                        } else {
+                            // Personalized fallback responses
+                            const generalResponses = [
+                                `That's a great question, ${userProfile.name || ''}! One of our design specialists can provide you with more detailed information. Would you like me to arrange a call?`,
+                                `Thank you for sharing that, ${userProfile.name || ''}. Based on what you've told me, I think our designers would create a beautiful ${userProfile.projectType || 'space'} for you. Would you like to schedule a consultation?`,
+                                `I understand what you're looking for, ${userProfile.name || ''}. Our team has worked on many similar ${userProfile.projectType || 'projects'} with great success. Would you like to see some examples from our portfolio?`,
+                                `I appreciate your interest, ${userProfile.name || ''}! To better assist you, it would be helpful to know more about your ${userProfile.projectType || 'space'} and design preferences. Would you like to tell me more?`
+                            ];
+                            response = generalResponses[Math.floor(Math.random() * generalResponses.length)];
+                        }
+                    }
+                    
+                    // Add response to chat history
+                    chatHistory.push({ role: 'assistant', content: response });
+                    
+                    // Remove typing indicator and show response
+                    hideTypingIndicator();
+                    setTimeout(function() {
+                        addMessage(response, 'bot');
+                        
+                        // Add automatic closure after a final response if appropriate
+                        if (response === keywords.goodbye || response === keywords.bye || 
+                            response === keywords.thanks || response === keywords['thank you']) {
+                            // This is already a closing message, no need to add another
+                        } else if (chatHistory.length >= 6 && lowerMessage.includes('done')) {
+                            // If conversation is substantial and user indicates completion
+                            setTimeout(function() {
+                                const closingMessage = `It seems we've covered what you needed. Thank you for chatting with Oakwood Interiors today! We look forward to helping transform your ${userProfile.projectType || 'space'}. Have a wonderful day! 👋`;
+                                addMessage(closingMessage, 'bot');
+                                chatHistory.push({ role: 'assistant', content: closingMessage });
+                            }, 2000);
+                        }
+                        
+                        // Show suggested responses after bot responds
+                        setTimeout(showSuggestedResponses, 1000);
+                    }, chatbotConfig.responseDelay);
+                    
+                }, chatbotConfig.typingDelay);
+            }
+            
+            // Check if user profile is complete and offer to store or email details
+            function checkProfileCompletion() {
+                if (userProfile.name && userProfile.email && userProfile.projectType && userProfile.budget) {
+                    const profileComplete = `I've collected your project details! Would you like me to:
+                    
+1. Email a summary to you at ${userProfile.email}
+2. Have a designer contact you directly
+3. Show you examples of similar ${userProfile.projectType} projects`;
+                    
+                    setTimeout(function() {
+                        addMessage(profileComplete, 'bot');
+                    }, 1000);
+                }
+            }
+            
+            // Add a message to the chat
+            function addMessage(text, sender) {
+                if (messagesContainer) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', sender);
+                    
+                    const messagePara = document.createElement('p');
+                    messagePara.innerHTML = text.replace(/\n/g, '<br>'); // Support multiline messages
+                    
+                    messageDiv.appendChild(messagePara);
+                    messagesContainer.appendChild(messageDiv);
+                    
+                    // Scroll to bottom
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }
+            }
+            
+            // Show suggested responses/quick replies
+            function showSuggestedResponses() {
+                // Remove existing suggestions
+                const existingSuggestions = messagesContainer.querySelector('.suggested-responses');
+                if (existingSuggestions) {
+                    existingSuggestions.remove();
+                }
+                
+                // Create suggestions container
+                const suggestionsDiv = document.createElement('div');
+                suggestionsDiv.classList.add('suggested-responses');
+                suggestionsDiv.style.display = 'flex';
+                suggestionsDiv.style.flexWrap = 'wrap';
+                suggestionsDiv.style.gap = '8px';
+                suggestionsDiv.style.marginTop = '15px';
+                
+                // Add suggested responses
+                chatbotConfig.suggestedResponses.forEach(suggestion => {
+                    const suggestionBtn = document.createElement('button');
+                    suggestionBtn.textContent = suggestion;
+                    suggestionBtn.style.padding = '8px 12px';
+                    suggestionBtn.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
+                    suggestionBtn.style.border = '1px solid rgba(212, 175, 55, 0.3)';
+                    suggestionBtn.style.borderRadius = '20px';
+                    suggestionBtn.style.fontSize = '12px';
+                    suggestionBtn.style.color = '#a17c27';
+                    suggestionBtn.style.cursor = 'pointer';
+                    suggestionBtn.style.transition = 'all 0.3s ease';
+                    
+                    suggestionBtn.addEventListener('mouseover', function() {
+                        this.style.backgroundColor = 'rgba(212, 175, 55, 0.2)';
+                    });
+                    
+                    suggestionBtn.addEventListener('mouseout', function() {
+                        this.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
+                    });
+                    
+                    suggestionBtn.addEventListener('click', function() {
+                        chatInput.value = this.textContent;
+                        handleSendMessage();
+                        suggestionsDiv.remove();
+                    });
+                    
+                    suggestionsDiv.appendChild(suggestionBtn);
+                });
+                
+                messagesContainer.appendChild(suggestionsDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+            
+            // Show typing indicator
+            function showTypingIndicator() {
+                isTyping = true;
+                
+                const typingDiv = document.createElement('div');
+                typingDiv.classList.add('message', 'bot', 'typing-indicator');
+                
+                const typingPara = document.createElement('p');
+                
+                const typingSpan = document.createElement('span');
+                typingSpan.textContent = 'Typing';
+                typingPara.appendChild(typingSpan);
+                
+                const dotContainer = document.createElement('span');
+                dotContainer.classList.add('dot-container');
+                dotContainer.style.display = 'inline-block';
+                
+                for (let i = 0; i < 3; i++) {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot');
+                    dot.textContent = '.';
+                    dot.style.animation = `dotFade 1.5s ${i * 0.5}s infinite`;
+                    dot.style.opacity = '0';
+                    dotContainer.appendChild(dot);
+                }
+                
+                typingPara.appendChild(dotContainer);
+                typingDiv.appendChild(typingPara);
+                messagesContainer.appendChild(typingDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                
+                // Add style for dot animation if not present
+                if (!document.getElementById('dot-animation-style')) {
+                    const style = document.createElement('style');
+                    style.id = 'dot-animation-style';
+                    style.textContent = `
+                        @keyframes dotFade {
+                            0%, 100% { opacity: 0; }
+                            50% { opacity: 1; }
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+            }
+            
+            // Hide typing indicator
+            function hideTypingIndicator() {
+                isTyping = false;
+                const typingIndicator = messagesContainer.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+            
+            // Generate a unique session ID
+            function generateSessionId() {
+                return 'session-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+            }
+            
+            // Initialize the chatbot
+            initChatbot();
+            
+            // Add direct event handler on window load as a fallback
+            window.addEventListener('load', function() {
+                if (chatButton) {
+                    console.log('Adding direct onclick handler after window load');
+                    chatButton.onclick = function() {
+                        if (chatWindow) {
+                            chatWindow.classList.toggle('active');
+                            if (chatWindow.classList.contains('active') && notification) {
+                                notification.classList.add('hidden');
+                            }
+                        }
+                    };
+                }
+            });
+            
+            // Add closing prompts to suggested responses after a few exchanges
+            let conversationTurns = 0;
+            const originalSuggestedResponses = [...chatbotConfig.suggestedResponses];
+            
+            // Update suggested responses function to include closure options after a few exchanges
+            const originalShowSuggestedResponses = showSuggestedResponses;
+            showSuggestedResponses = function() {
+                conversationTurns++;
+                
+                // After 3 exchanges, add closing options to suggested responses
+                if (conversationTurns >= 3) {
+                    chatbotConfig.suggestedResponses = [
+                        ...originalSuggestedResponses.slice(0, 2),
+                        "Thanks for your help",
+                        "Goodbye"
+                    ];
+                }
+                
+                // Call the original function
+                originalShowSuggestedResponses();
+            };
+        });
+    </script>
+    
+    <!-- Direct chatbot fix as a last resort -->
+    <script>
+        // Emergency fix to ensure chat button works
+        setTimeout(function() {
+            var chatBtn = document.getElementById('chat-button');
+            var chatWin = document.getElementById('chat-window');
+            if (chatBtn && chatWin) {
+                chatBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Emergency handler triggered');
+                    chatWin.classList.toggle('active');
+                    return false;
+                }, true);
+            }
+        }, 2000);
+    </script>
+
+    <!-- Enhanced smooth scrolling script -->
+    <script>
+        // Smooth scrolling for navigation links with offset for fixed header
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links that point to an ID
+            const navLinks = document.querySelectorAll('.main-nav a[href^="#"]');
+            
+            // Add click event listener to each navigation link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Only process links that point to an existing element
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return; // Skip if it's just "#"
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault(); // Prevent default anchor behavior
+                        
+                        // Calculate header height to offset scroll position
+                        const headerHeight = document.querySelector('.main-header').offsetHeight;
+                        
+                        // Get the element's position relative to the viewport
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        
+                        // Calculate position accounting for header and current scroll
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20; // Added extra 20px padding
+                        
+                        // Scroll to the element with smooth behavior
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // If mobile menu is open, close it
+                        const mainNav = document.querySelector('.main-nav');
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            document.body.classList.remove('menu-open');
+                            document.querySelector('.nav-toggle').classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
+            // Throttle function for better performance
+            function throttle(callback, limit) {
+                let waiting = false;
+                return function() {
+                    if (!waiting) {
+                        callback.apply(this, arguments);
+                        waiting = true;
+                        setTimeout(() => {
+                            waiting = false;
+                        }, limit);
+                    }
+                };
+            }
+            
+            // Enhanced parallax scrolling effect
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            function parallaxEffect() {
+                const scrollPosition = window.pageYOffset;
+                const viewportHeight = window.innerHeight;
+                
+                parallaxElements.forEach(element => {
+                    // Get element's AOS transform value first to avoid conflicts
+                    const currentTransform = window.getComputedStyle(element).transform;
+                    const rect = element.getBoundingClientRect();
+                    const elementTop = rect.top + scrollPosition;
+                    const elementHeight = rect.height;
+                    
+                    // Check if the element is in the viewport
+                    if (elementTop < scrollPosition + viewportHeight + 100 && 
+                        elementTop + elementHeight > scrollPosition - 100) {
+                        
+                        // Calculate scroll percentage (0 when at top of viewport, 1 at bottom)
+                        const scrollPercentage = (scrollPosition - (elementTop - viewportHeight)) / (viewportHeight + elementHeight);
+                        
+                        // Constrain the percentage between 0 and 1
+                        const constrained = Math.max(0, Math.min(1, scrollPercentage));
+                        
+                        // Calculate parallax offset - move slower as user scrolls
+                        const parallaxOffset = (constrained - 0.5) * 30; // 30px max movement
+                        
+                        // Apply transform without disturbing AOS animations 
+                        // Use translateY3D for better performance
+                        element.style.transform = `translate3d(0, ${parallaxOffset}px, 0)`;
+                    }
+                });
+            }
+            
+            // Use throttled scroll handler for better performance
+            window.addEventListener('scroll', throttle(function() {
+                parallaxEffect();
+                addScrollClass();
+            }, 16)); // ~60fps
+            
+            // Improved scroll reveal with debouncing
+            function addScrollClass() {
+                const scrollElements = document.querySelectorAll('.scroll-reveal');
+                
+                scrollElements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    const elementVisible = 100;
+                    
+                    // Check if element is in viewport with some padding
+                    if (rect.top < window.innerHeight - elementVisible && 
+                        rect.bottom > elementVisible) {
+                        if (!element.classList.contains('active')) {
+                            element.classList.add('active');
+                        }
+                    } else {
+                        // Optional: remove active class when element is not visible
+                        // element.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Initialize effects on page load
+            parallaxEffect();
+            addScrollClass();
+            
+            // Refresh on resize for responsive behavior
+            window.addEventListener('resize', throttle(function() {
+                parallaxEffect();
+                addScrollClass();
+            }, 100));
+            
+            // Add subtle animations to elements on hover
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    const img = this.querySelector('img');
+                    if (img) {
+                        img.style.transform = 'scale(1.05)';
+                        img.style.transition = 'transform 0.5s ease';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    const img = this.querySelector('img');
+                    if (img) {
+                        img.style.transform = 'scale(1)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
